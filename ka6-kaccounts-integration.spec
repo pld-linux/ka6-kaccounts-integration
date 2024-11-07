@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.08.2
+%define		kdeappsver	24.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kaccounts-integration
 Summary:	Kaccounts integration
 Name:		ka6-%{kaname}
-Version:	24.08.2
+Version:	24.08.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9cd8be69a67b03d08136c8b18ccfc6be
+# Source0-md5:	4e0f025bde9866709856725efa287098
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Qml-devel >= %{qtver}
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_accounts.so
 %{_libdir}/qt6/qml/org/kde/kaccounts/kaccountsdeclarativeplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kaccounts/kde-qmlmodule.version
+%{_datadir}/qlogging-categories6/kaccounts.categories
 
 %files devel
 %defattr(644,root,root,755)

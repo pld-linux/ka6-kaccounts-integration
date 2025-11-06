@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kaccounts-integration
 Summary:	Kaccounts integration
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ce5c67c0448cfa1feb88af671dac8bb8
+# Source0-md5:	bb1b93d881ba01777bc316c04827cc98
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Qml-devel >= %{qtver}
@@ -98,16 +98,16 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %dir %{_libdir}/qt6/qml/org/kde/kaccounts
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kaccounts/libkaccountsdeclarativeplugin.so
+%{_libdir}/qt6/qml/org/kde/kaccounts/libkaccountsdeclarativeplugin.so
 %{_libdir}/qt6/qml/org/kde/kaccounts/qmldir
 %dir %{_libdir}/qt6/plugins/kaccounts
 %dir %{_libdir}/qt6/plugins/kaccounts/daemonplugins
-%attr(755,root,root) %{_libdir}/qt6/plugins/kaccounts/daemonplugins/kaccounts_kio_webdav_plugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_kaccounts.so
+%{_libdir}/qt6/plugins/kaccounts/daemonplugins/kaccounts_kio_webdav_plugin.so
+%{_libdir}/qt6/plugins/plasma/kcms/systemsettings/kcm_kaccounts.so
 %{_desktopdir}/kcm_kaccounts.desktop
 %ghost %{_libdir}/libkaccounts6.so.2
-%attr(755,root,root) %{_libdir}/libkaccounts6.so.*.*
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/kded_accounts.so
+%{_libdir}/libkaccounts6.so.*.*
+%{_libdir}/qt6/plugins/kf6/kded/kded_accounts.so
 %{_libdir}/qt6/qml/org/kde/kaccounts/kaccountsdeclarativeplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kaccounts/kde-qmlmodule.version
 %{_datadir}/qlogging-categories6/kaccounts.categories
